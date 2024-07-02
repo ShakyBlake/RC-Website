@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chessington World of Adventures</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!--Links CSS-->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico"> <!--Favicon-->
+</head>
+<body>
+    <header>
+        <h1>Chessington World of Adventures</h1>
+        <nav>
+            <ul>
+                <li><a href="/random.html">Home</a></li>
+                <li><a href="{{ url_for('coasters') }}">Coasters</a></li> <!-- Links to other pages -->
+                <li><a href="{{ url_for('parks') }}">Parks</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Details</h2>
+        <p><strong>Park Name:</strong> Chessington World of Adventures</p>
+        <p><strong>Location:</strong> London</p>
+        <p><strong>Description:</strong> Chessington World of Adventures is a theme park and zoo in England, featuring thrilling rides, animal encounters, live shows, and enchanting themed areas for families to explore.</p>
+        <p><strong>Website:</strong> https://www.chessington.com/</p>
+        <p><strong>Opening Date:</strong> 28th July 1937</p>
+        <!-- Add more fields as needed -->
+
+        <img src="/static/images/chessington.jpg" alt="Chessington World of Adventures">
+    </div>
+
+    <footer>
+        <p>Contact us at <a href="mailto:shakyblakey123@gmail.com">shakyblakey123@gmail.com</a></p>
+        <p>&copy; 2024 Rollercoaster World</p>
+    </footer>
+</body>
+</html>

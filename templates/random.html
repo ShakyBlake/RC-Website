@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Rollercoaster</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='random.css') }}">
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico"> <!--Favicon-->
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <div class="center">
+                    <button id="homeBtn" onclick="homeFunction()">Home</button>
+                    <button id="coastersBtn" onclick="coastersFunction()">Coasters</button>
+                    <button id="parksBtn" onclick="parksFunction()">Parks</button>
+                    <button id="contactBtn" onclick="contactFunction()">Contact</button>
+                </div>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>{{ coaster['Coaster Name'] }}</h1>
+        <p>{{ coaster['description'] }}</p>
+        <img id="selected-coaster" src="{{ url_for('static', filename='images/coaster' + selected_coaster_number + '.jpg') }}" alt="Coaster {{ selected_coaster_number }}">
+        <script>
+            function homeFunction() {
+                window.location.href = '/';
+            }
+            function coastersFunction() {
+                window.location.href = "{{ url_for('coasters') }}";
+            }
+            function parksFunction() {
+                window.location.href = "{{ url_for('parks') }}";
+            }
+            function contactFunction() {
+                window.location.href = '/contact';
+            }
+        </script>
+    </main>
+</body>
+</html>

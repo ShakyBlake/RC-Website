@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #D9D0DE;
+    color: #333;
+}
+
+header {
+    background-color: #083D77;
+    color: #70FFDE;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #70FFDE;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+section h2 {
+    color: #609905;
+}
+
+.coaster {
+    background-color: #EBEBD3;
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background-color: #083D77;
+    color: #70FFDE;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer a {
+    color: #609905;
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100vh;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em; /* Space between form groups */
+}
+.form-group label {
+    margin-bottom: 0.5em; /* Space between label and input */
+}
+
+
+.box {
+    background-color: rgb(128, 122, 122);
+    height: 100px;
+    width: 250px;
+    padding: 20px;
+    margin: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.box img {
+    max-width: 100%;
+    height: 100px;
+    margin-bottom: 100px; /* Adjust margin as needed */
+    margin-top: 0px;
+    padding: 30px;
+}
+

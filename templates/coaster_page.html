@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ coaster['Coaster Name'] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!--Links CSS-->
+    <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico"> <!--Favicon-->
+</head>
+<body>
+    <header>
+        <h1>{{ coaster['Coaster Name'] }}</h1>
+        <nav>
+            <ul>
+                <li><a href="/random.html">Home</a></li>
+                <li><a href="{{ url_for('coasters') }}">Coasters</a></li> <!-- Links to other pages -->
+                <li><a href="{{ url_for('parks') }}">Parks</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Details</h2>
+        <p><strong>Coaster Name:</strong> {{ coaster['Coaster Name'] }}</p>
+        <p><strong>Location:</strong> {{ coaster['Park Id'] }}</p>
+        <p><strong>Height:</strong> {{ coaster['Height'] }} meters</p>
+        <p><strong>Speed:</strong> {{ coaster['Speed'] }} km/h</p>
+        <p><strong>Inversions:</strong> {{ coaster['Inversions'] }}</p>
+        <p><strong>Manufacturer:</strong> {{ coaster['Manufacturer'] }}</p>
+        <p><strong>Description:</strong> {{ coaster['Description'] }}</p>
+        <!-- Add more fields as needed -->
+
+        <img src="{{ url_for('static', filename='images/' + coaster['image']) }}" alt="{{ coaster['Coaster Name'] }}">
+    </div>
+
+    <footer>
+        <p>Contact us at <a href="mailto:shakyblakey123@gmail.com">shakyblakey123@gmail.com</a></p>
+        <p>&copy; 2024 Rollercoaster World</p>
+    </footer>
+</body>
+</html>
