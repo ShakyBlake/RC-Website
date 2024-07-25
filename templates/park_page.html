@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ park['Park Name'] }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ park['Park Name'] }}</h1>
+        <nav>
+            <ul>
+                <li><a href="/random.html">Home</a></li>
+                <li><a href="{{ url_for('coasters') }}">Coasters</a></li>
+                <li><a href="{{ url_for('parks') }}">Parks</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Details</h2>
+        <p><strong>Park Name:</strong> {{ park['Park Name'] }}</p>
+        <p><strong>Location:</strong> {{ park['Location'] }}</p>
+        <p><strong>Description:</strong> {{ park['Description'] }} acres</p>
+        <p><strong>Website:</strong> {{ park['Website'] }}</p>
+        <p><strong>Opening Date:</strong> {{ park['Opening Date'] }}</p>
+        <!-- Add more fields as needed -->
+
+        <img src="{{park['image']}}" alt="{{ park['Park Name'] }}">
+    </div>
+
+    <footer>
+        <p>Contact us at <a href="mailto:shakyblakey123@gmail.com">shakyblakey123@gmail.com</a></p>
+        <p>&copy; 2024 Rollercoaster World</p>
+    </footer>
+</body>
+</html>

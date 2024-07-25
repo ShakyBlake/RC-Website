@@ -102,24 +102,22 @@ def coaster_page(name):
     if coaster is None:
         return 'Coaster not found!', 404
     coaster = dict(coaster)
-    coaster['image'] = coaster_images.get(coaster['Coaster Name'], 'default.jpg')
+    coaster['image'] = (coaster['Image Path'])
+
     return render_template('coaster_page.html', coaster=coaster)
 
-@app.route('/park_page1.html')
-def park_page1():
-    return render_template('park_page1.html')
-
-@app.route('/park_page2.html')
-def park_page2():
-    return render_template('park_page2.html')
-
-@app.route('/park_page3.html')
-def park_page3():
-    return render_template('park_page3.html')
-
-@app.route('/park_page4.html')
-def park_page4():
-    return render_template('park_page4.html')
+@app.route('/park/<name>')
+def park_page(name):
+    conn = get_db_connection()
+    cursor = conn.cursor()
+    cursor.execute('SELECT * FROM Parks WHERE "Park Name" = ?', (name,))
+    park = cursor.fetchone()
+    conn.close()
+    if park is None:
+        return 'Park not found!', 404
+    park = dict(park)
+    park['image'] = park['Image Path']
+    return render_template('park_page.html', park=park)
 
 @app.route('/data')
 def data():

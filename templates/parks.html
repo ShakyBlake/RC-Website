@@ -24,10 +24,49 @@
         <div id="data-table-container"></div>
         <div id="data-json-container"></div>
 
-        <li><a href="park_page1.html">Alton Towers</a></li>
-        <li><a href="park_page2.html">Thorpe Park</a></li>
-        <li><a href="park_page3.html">Chessington World of Adventures</a></li>
-        <li><a href="park_page4.html">Blackpool Pleasure Beach</a></li>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                fetch('/data_parks')
+                    .then(response => response.json())
+                    .then(data => {
+                        const dataTableContainer = document.getElementById('data-table-container');
+                        const table = document.createElement('table');
+
+                        // Create header row
+                        const headerRow = document.createElement('tr');
+                        for (let column in data[0]) {
+                            const th = document.createElement('th');
+                            th.textContent = column;
+                            headerRow.appendChild(th);
+                        }
+                        table.appendChild(headerRow);
+
+                        // Create data rows
+                        data.forEach(item => {
+                            const row = document.createElement('tr');
+                            for (let column in item) {
+                                const td = document.createElement('td');
+                                if (column === 'Park Name') {
+                                    const a = document.createElement('a');
+                                    a.href = `/park/${encodeURIComponent(item[column])}`;
+                                    a.textContent = item[column];
+                                    td.appendChild(a);
+                                } else {
+                                    td.textContent = item[column];
+                                }
+                                row.appendChild(td);
+                            }
+                            table.appendChild(row);
+                        });
+
+                       dataTableContainer.appendChild(table);
+
+                        const dataJsonContainer = document.getElementById('data-json-container');
+                        dataJsonContainer.textContent = JSON.stringify(data, null, 2);
+                    })
+                    .catch(error => console.error('Error fetching data:', error));
+            });
+        </script>
     </div>
 
     <footer>

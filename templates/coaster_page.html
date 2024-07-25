@@ -24,14 +24,14 @@
         <h2>Details</h2>
         <p><strong>Coaster Name:</strong> {{ coaster['Coaster Name'] }}</p>
         <p><strong>Location:</strong> {{ coaster['Park Id'] }}</p>
-        <p><strong>Height:</strong> {{ coaster['Height'] }} meters</p>
+        <p><strong>Height:</strong> {{ coaster['Height'] }}</p>
         <p><strong>Speed:</strong> {{ coaster['Speed'] }} km/h</p>
         <p><strong>Inversions:</strong> {{ coaster['Inversions'] }}</p>
         <p><strong>Manufacturer:</strong> {{ coaster['Manufacturer'] }}</p>
         <p><strong>Description:</strong> {{ coaster['Description'] }}</p>
         <!-- Add more fields as needed -->
 
-        <img src="{{ url_for('static', filename='images/' + coaster['image']) }}" alt="{{ coaster['Coaster Name'] }}">
+        <img src="{{coaster['image']}}" alt="{{ coaster['Coaster Name'] }}">
     </div>
 
     <footer>
