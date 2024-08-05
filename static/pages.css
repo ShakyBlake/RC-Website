@@ -1,0 +1,65 @@
+footer {
+    background-color: #083D77;
+    color: #70FFDE;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+body {
+    font-family: "Russo One", sans-serif;
+    margin: 0;
+    padding-bottom: 0;
+    background-color: #D9D0DE;
+    color: #333;
+    z-index: 2;
+}
+
+.russo-one-regular {
+    font-family: "Russo One", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+ 
+header {
+    background-color: #083D77;
+    color: #70FFDE;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #70FFDE;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+img {
+    max-width: 250px;
+    max-height: 250px;
+    padding: 100px;
+    float: right;
+    position: absolute; /* Positioning the image absolutely */
+    top: 0; /* Align to the top */
+    right: 0; /* Align to the right */
+}

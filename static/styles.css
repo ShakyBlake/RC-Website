@@ -1,10 +1,16 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Russo One", sans-serif;
     margin: 0;
-    padding: 0;
+    padding-bottom: 0;
     background-color: #D9D0DE;
     color: #333;
 }
+
+.russo-one-regular {
+    font-family: "Russo One", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
 
 header {
     background-color: #083D77;
@@ -106,3 +112,22 @@ footer a {
     padding: 30px;
 }
 
+.search-container {
+    float: left;
+    padding: 6px;
+    border: none;
+    margin-top: 8px;
+    margin-left: 16px;
+    font-size: 17px;
+    z-index: 1;
+}
+
+.search-results {
+    z-index: 1;
+}
+
+footer {
+    margin-top: -50px;
+    position: relative;
+    z-index: 10;
+}

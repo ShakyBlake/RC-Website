@@ -4,18 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ coaster['Coaster Name'] }}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!--Links CSS-->
+    <link rel="stylesheet" href="{{ url_for('static', filename='pages.css') }}"> <!--Links CSS-->
     <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico"> <!--Favicon-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>{{ coaster['Coaster Name'] }}</h1>
         <nav>
             <ul>
-                <li><a href="/random.html">Home</a></li>
+                <li><a href="/random">Home</a></li>
                 <li><a href="{{ url_for('coasters') }}">Coasters</a></li> <!-- Links to other pages -->
                 <li><a href="{{ url_for('parks') }}">Parks</a></li>
-                <li><a href="/contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -23,7 +25,6 @@
     <div class="container">
         <h2>Details</h2>
         <p><strong>Coaster Name:</strong> {{ coaster['Coaster Name'] }}</p>
-        <p><strong>Location:</strong> {{ coaster['Park Id'] }}</p>
         <p><strong>Height:</strong> {{ coaster['Height'] }}</p>
         <p><strong>Speed:</strong> {{ coaster['Speed'] }} km/h</p>
         <p><strong>Inversions:</strong> {{ coaster['Inversions'] }}</p>
@@ -31,11 +32,11 @@
         <p><strong>Description:</strong> {{ coaster['Description'] }}</p>
         <!-- Add more fields as needed -->
 
-        <img src="{{coaster['image']}}" alt="{{ coaster['Coaster Name'] }}">
+        <img src="{{coaster['image']}}" alt="{{ coaster['Coaster Name'] }}" height="250" width="250">
     </div>
 
     <footer>
-        <p>Contact us at <a href="mailto:shakyblakey123@gmail.com">shakyblakey123@gmail.com</a></p>
+        <p>Contact us at <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">shakyblakey123@gmail.com</a></p>
         <p>&copy; 2024 Rollercoaster World</p>
     </footer>
 </body>

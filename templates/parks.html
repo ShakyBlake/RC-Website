@@ -6,25 +6,49 @@
     <title>Parks</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> <!--Links CSS-->
     <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico"> <!--Favicon-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <h1>Rollercoaster World - Parks</h1>
         <nav>
             <ul>
-                <li><a href="/random.html">Home</a></li>
+                <li><a href="/random">Home</a></li>
                 <li><a href="{{ url_for('coasters') }}">Coasters</a></li> <!-- Links to other pages -->
                 <li><a href="{{ url_for('parks') }}">Parks</a></li>
-                <li><a href="/contact">Contact</a></li>
             </ul>
         </nav>
     </header>
     <div class="search-container">
     <form>
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
+      <input type="text" placeholder="Search.." role="search" name="search">
+      <button type="submit"><i class="fa fa-search"></i>Search</button>
     </form>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const searchInput = document.querySelector('input[name="search"]');
+            const dataContainer = document.getElementById('data-table-container');
+
+            searchInput.addEventListener('input', function() {
+                const searchTerm = searchInput.value.toLowerCase();
+                const dataRows = dataContainer.querySelectorAll('tr');
+
+                dataRows.forEach(function(row) {
+                    const parkName = row.cells[0].textContent.toLowerCase();
+
+                    if (parkName.includes(searchTerm)) {
+                        row.style.display = 'table-row';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
   </div>
+
     <div class="container">
         <div id="data-table-container"></div>
         <div id="data-json-container"></div>
@@ -67,7 +91,7 @@
                        dataTableContainer.appendChild(table);
 
                         const dataJsonContainer = document.getElementById('data-json-container');
-                        dataJsonContainer.textContent = JSON.stringify(data, null, 2);
+                        
                     })
                     .catch(error => console.error('Error fetching data:', error));
             });
@@ -75,7 +99,7 @@
     </div>
 
     <footer>
-        <p>Contact us at <a href="mailto:shakyblakey123@gmail.com">shakyblakey123@gmail.com</a></p>
+        <p>Contact us at <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">shakyblakey123@gmail.com</a></p>
         <p>&copy; 2024 Rollercoaster World</p>
     </footer>
 </body>

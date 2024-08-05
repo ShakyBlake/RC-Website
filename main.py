@@ -52,7 +52,7 @@ park_images = {
 def index():
     return render_template('index.html')
 
-@app.route('/random.html')
+@app.route('/random')
 def random_coaster():
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -65,7 +65,8 @@ def random_coaster():
     coaster = dict(coaster)
     
     # Assuming that the coaster name maps directly to the coaster image
-    coaster['image'] = coaster_images.get(coaster['Coaster Name'], 'default.jpg')
+    coaster['image'] = (coaster['Image Path'])
+
     return render_template('coaster_page.html', coaster=coaster)
 
 @app.route('/coasters')
@@ -88,9 +89,6 @@ def parks():
     parks = [dict(ix) for ix in rows]
     return render_template('parks.html', parks=parks)
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
 
 @app.route('/coaster/<name>')
 def coaster_page(name):

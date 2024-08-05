@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random Rollercoaster</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='random.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='pages.css') }}">
     <link rel="icon" type="image/x-icon" href="/static/images/favicon.ico"> <!--Favicon-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
@@ -15,7 +18,6 @@
                     <button id="homeBtn" onclick="homeFunction()">Home</button>
                     <button id="coastersBtn" onclick="coastersFunction()">Coasters</button>
                     <button id="parksBtn" onclick="parksFunction()">Parks</button>
-                    <button id="contactBtn" onclick="contactFunction()">Contact</button>
                 </div>
             </ul>
         </nav>
@@ -23,10 +25,10 @@
     <main>
         <h1>{{ coaster['Coaster Name'] }}</h1>
         <p>{{ coaster['description'] }}</p>
-        <img id="selected-coaster" src="{{ url_for('static', filename='images/coaster' + selected_coaster_number + '.jpg') }}" alt="Coaster {{ selected_coaster_number }}">
+        <img id="selected-coaster" src="{{ url_for('static', filename='images/coaster' + selected_coaster_number + '.jpg') }}" alt="Coaster {{ selected_coaster_number }}" height="250" width="250">
         <script>
             function homeFunction() {
-                window.location.href = '/';
+                window.location.href = '/random';
             }
             function coastersFunction() {
                 window.location.href = "{{ url_for('coasters') }}";
@@ -40,4 +42,8 @@
         </script>
     </main>
 </body>
+<footer>
+    <p>Contact us at <a href="https://mail.google.com/mail/u/0/#inbox?compose=new">shakyblakey123@gmail.com</a></p>
+    <p>&copy; 2024 Rollercoaster World</p>
+</footer>
 </html>
